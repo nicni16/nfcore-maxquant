@@ -1,5 +1,5 @@
 <!--
-# nf-core/maxquant pull request
+# nicni16/nfcore-maxquant pull request
 
 Many thanks for contributing to nf-core/maxquant!
 

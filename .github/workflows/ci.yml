@@ -12,7 +12,7 @@ jobs:
   test:
     name: Run workflow tests
     # Only run on push if this is the nf-core dev branch (merged PRs)
-    if: ${{ github.event_name != 'push' || (github.event_name == 'push' && github.repository == 'nf-core/maxquant') }}
+    if: ${{ github.event_name != 'push' || (github.event_name == 'push' && github.repository == 'nicni16/nfcore-maxquant') }}
     runs-on: ubuntu-latest
     env:
       NXF_VER: ${{ matrix.nxf_ver }}
@@ -34,13 +34,13 @@ jobs:
 
       - name: Build new docker image
         if: env.MATCHED_FILES
-        run: docker build --no-cache . -t nfcore/maxquant:dev
+        run: docker build --no-cache . -t lnkn/nfcore-maxquant:dev
 
       - name: Pull docker image
         if: ${{ !env.MATCHED_FILES }}
         run: |
-          docker pull nfcore/maxquant:dev
-          docker tag nfcore/maxquant:dev nfcore/maxquant:dev
+          docker pull lnkn/nfcore-maxquant:dev
+          docker tag lnkn/nfcore-maxquant:dev lnkn/nfcore-maxquant:dev
 
       - name: Install Nextflow
         env:
