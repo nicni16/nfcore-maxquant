@@ -2,12 +2,12 @@
 
 **Implementation using sdrf and maxquant under the nf-core ruleset**.
 
-[![GitHub Actions CI Status](https://github.com/nf-core/maxquant/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/maxquant/actions)
-[![GitHub Actions Linting Status](https://github.com/nf-core/maxquant/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/maxquant/actions)
+[![GitHub Actions CI Status](https://github.com/nicni16/nfcore-maxquant/workflows/nf-core%20CI/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions)
+[![GitHub Actions Linting Status](https://github.com/nicni16/nfcore-maxquant/nf-core%20linting/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions)
 [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A520.04.0-brightgreen.svg)](https://www.nextflow.io/)
 
 [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](https://bioconda.github.io/)
-[![Docker](https://img.shields.io/docker/automated/nfcore/maxquant.svg)](https://hub.docker.com/r/nfcore/maxquant)
+[![Docker](https://img.shields.io/docker/automated/nfcore/maxquant.svg)](https://hub.docker.com/r/lnkn/nfcore-maxquant)
 [![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23maxquant-4A154B?logo=slack)](https://nfcore.slack.com/channels/maxquant)
 
 ## Introduction
