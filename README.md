@@ -10,6 +10,7 @@
 [![Docker](https://img.shields.io/docker/automated/lnkn/nfcore-maxquant.svg)](https://hub.docker.com/repository/docker/lnkn/nfcore-maxquant)
 [![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23maxquant-4A154B?logo=slack)](https://nfcore.slack.com/channels/maxquant)
 
+
 ## Introduction
 
 <!-- TODO nf-core: Write a 1-2 sentence summary of what data the pipeline is for and what it does -->
