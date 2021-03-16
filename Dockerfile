@@ -1,5 +1,5 @@
 FROM nfcore/base:1.12.1
-LABEL authors="NKN&VS" \
+LABEL authors="Niclas Kildegaard Nielsen and Veit Schwämmle" \
       description="Docker image containing all software requirements for the nf-core/maxquant pipeline"
 
 # Install the conda environment

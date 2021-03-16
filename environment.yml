@@ -10,6 +10,8 @@ dependencies:
   - conda-forge::markdown=3.1.1
   - conda-forge::pymdown-extensions=6.0
   - conda-forge::pygments=2.5.2
-  # TODO nf-core: Add required software dependencies here
-  - bioconda::fastqc=0.11.8
-  - bioconda::multiqc=1.7
+  - r-hexbin=1.28.2
+  - mono=5.14.0.177
+  - maxquant=1.6.10.43
+  - sdrf-pipelines=0.0.12
+  - bioconductor-normalyzerde=1.8
