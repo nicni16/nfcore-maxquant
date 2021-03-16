@@ -2,8 +2,8 @@
 
 **Implementation using sdrf and maxquant under the nf-core ruleset**.
 
-[![GitHub Actions CI Status](https://github.com/nicni16/nfcore-maxquant/workflows/nf-core%20CI/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions)
-[![GitHub Actions Linting Status](https://github.com/nicni16/nfcore-maxquant/nf-core%20linting/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions)
+[![GitHub Actions CI Status](https://github.com/nicni16/nfcore-maxquant/workflows/nf-core%20CI/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions?query=workflow%3A%22nf-core+CI%22)
+[![GitHub Actions Linting Status](https://github.com/nicni16/nfcore-maxquant/workflows/nf-core%20linting/badge.svg)](https://github.com/nicni16/nfcore-maxquant/actions?query=workflow%3A%22nf-core+linting%22)
 [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A520.04.0-brightgreen.svg)](https://www.nextflow.io/)
 
 [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](https://bioconda.github.io/)
