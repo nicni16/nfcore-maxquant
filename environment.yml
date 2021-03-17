@@ -12,6 +12,6 @@ dependencies:
   - conda-forge::pygments=2.5.2
   - r-hexbin=1.28.2
   - mono=5.14.0.177
-  - maxquant=1.6.10.43
-  - sdrf-pipelines=0.0.12
-  - bioconductor-normalyzerde=1.8.0
+  - bioconda::maxquant=1.6.10.43--0
+  - bioconda::sdrf-pipelines=0.0.12--py_0
+  - bioconda::bioconductor-normalyzerde==1.8.0--r40_0

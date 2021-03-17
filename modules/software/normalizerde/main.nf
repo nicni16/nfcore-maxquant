@@ -11,9 +11,11 @@ process NORMALYZERDE {
         mode: params.publish_dir_mode,
         saveAs: { filename -> saveFiles(filename:filename, options:params.options, publish_dir:getSoftwareName(task.process), publish_id:meta.id) }
 
-    conda (params.enable_conda ? "bioconda::bioconductor-normalyzerde=1.8.0" : null)
+    conda (params.enable_conda ? "bioconda::bioconductor-normalyzerde==1.8.0" : null) // Conda package
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
-        container "quay.io/biocontainers/bioconductor-normalyzerde:1.8.0--r40_0"
+        container "https://depot.galaxyproject.org/singularity/bioconductor-normalyzerde:1.8.0--r40_0" //Singularity Image
+    } else {
+        container "quay.io/biocontainers/bioconductor-normalyzerde:1.8.0--r40_0"  // Docker Image
     }
 
     input:

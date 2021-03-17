@@ -11,9 +11,11 @@ process SDRF {
         mode: params.publish_dir_mode,
         saveAs: { filename -> saveFiles(filename:filename, options:params.options, publish_dir:getSoftwareName(task.process), publish_id:meta.id) }
 
-    conda (params.enable_conda ? "bioconda::sdrf-pipelines=0.0.12" : null)
+    conda (params.enable_conda ? "bioconda::sdrf-pipelines=0.0.12" : null) // Conda package
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
-        container "quay.io/biocontainers/sdrf-pipelines:0.0.12--py_0"
+            container "https://depot.galaxyproject.org/singularity/sdrf-pipelines:0.0.12--py_0" //Singularity Image
+    } else {
+        container "quay.io/biocontainers/sdrf-pipelines:0.0.12--py_0" // Docker image
     }
     
     input: 
