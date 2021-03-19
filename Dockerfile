@@ -1,4 +1,4 @@
-FROM nfcore/base:1.12.1
+FROM nfcore/base:1.13
 LABEL authors="Niclas Kildegaard Nielsen and Veit Schwämmle" \
       description="Docker image containing all software requirements for the nf-core/maxquant pipeline"
 
