@@ -1,0 +1,52 @@
+name: maxquant
+
+description: Run the maxquant setup
+keywords:
+  - quantification
+  - analyzing
+  - peak detection
+tools:
+  - maxquant:
+      
+      description: MaxQuant is a quantitative proteomics software package designed for analyzing large mass-spectrometric data sets. License restricted.
+      homepage: https://www.maxquant.org/
+      documentation: http://coxdocs.org/doku.php
+      tool_dev_url: None
+      doi: ""
+      licence: ['http://www.coxdocs.org/lib/exe/fetch.php?media=license_agreement.pdf']
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - mqparameters:
+      type: path
+      description: parameter files for maxquant
+      pattern: "*.xml"
+  - rawfile:
+      type: file
+      description: rawfiles files for maxquant
+  - fastafile:
+      type: file
+      description: fasta files for maxquant
+
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - version:
+      type: file
+      description: File containing software version
+      pattern: "*.{version.txt}"
+  - txt:
+      type: file
+      description: protein groups 
+      pattern: "*.txt"
+
+authors:
+  - "@nicni16"

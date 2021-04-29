@@ -19,11 +19,11 @@ include { initOptions; saveFiles; getSoftwareName } from './functions'
 
 params.options = [:]
 options        = initOptions(params.options)
-def VERSION = '1.8.0'
+def VERSION ='0.0.12'
 
-process NORMALIZERDE {
-    tag "$norm"
-    label 'process_low'
+process SDRFPIPELINES {
+    tag "$sdrf"
+    label 'process_medium'
     publishDir "${params.outdir}",
         mode: params.publish_dir_mode,
         saveAs: { filename -> saveFiles(filename:filename, options:params.options, publish_dir:getSoftwareName(task.process), publish_id:'') }
@@ -32,11 +32,11 @@ process NORMALIZERDE {
     //               Software MUST be pinned to channel (i.e. "bioconda"), version (i.e. "1.10").
     //               For Conda, the build (i.e. "h9402c20_2") must be EXCLUDED to support installation on different operating systems.
     // TODO nf-core: See section in main README for further information regarding finding and adding container addresses to the section below.
-    conda (params.enable_conda ? "bioconda::bioconductor-normalyzerde=1.8.0" : null)
+    conda (params.enable_conda ? "bioconda::sdrf-pipelines=0.0.12" : null)
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
-        container "https://depot.galaxyproject.org/singularity/bioconductor-normalyzerde:1.8.0--r40hdfd78af_1"
+        container "https://depot.galaxyproject.org/singularity/sdrf-pipelines:0.0.12--py_0"
     } else {
-        container "quay.io/biocontainers/bioconductor-normalyzerde:1.8.0--r40hdfd78af_1"
+        container "lnkn/nfcore-maxquant:dev"
     }
 
     input:
@@ -46,32 +46,34 @@ process NORMALIZERDE {
     //               https://github.com/nf-core/modules/blob/master/software/bwa/index/main.nf
     // TODO nf-core: Where applicable please provide/convert compressed files as input/output
     //               e.g. "*.fastq.gz" and NOT "*.fastq", "*.bam" and NOT "*.sam" etc.
-        path sdrf_file
-        path exp_file
-        path protein_file 
-        file exp_file2 
+        path sdrf_file 
+        path fasta_file
 
     output:
-	    path "Normalyzer/Normalyzer_stats.tsv"                      , emit: tsv
-	    path "Normalyzer/${params.normalyzerMethod}-normalized.txt" , emit: txt
-        path "*.version.txt"                                        , emit: version
+        path "mqpar.xml"              , emit: xml
+        path "exp_design.tsv"         , emit: tsv
+        path "*.version.txt"          , emit: version
 
     script:
     def software = getSoftwareName(task.process)
-    
     // TODO nf-core: Where possible, a command MUST be provided to obtain the version number of the software e.g. 1.10
     //               If the software is unable to output a version number on the command-line then it can be manually specified
     //               e.g. https://github.com/nf-core/modules/blob/master/software/homer/annotatepeaks/main.nf
     // TODO nf-core: It MUST be possible to pass additional parameters to the tool as a command-line string via the "$options.args" variable
-    
     """
-    cp "${exp_file}" exp_file.tsv
-    cp "${exp_file2}" exp_file2.tsv 
-    cp "${protein_file}" protein_file.txt
-    Rscript $baseDir/runNormalyzer.R --comps="${params.comparisons}" --method="${params.normalyzerMethod}"
-    cp -R Normalyzer "${params.outdir}"
+    parse_sdrf \\
+    convert-maxquant \\
+    -s "${sdrf_file}" \\
+    -f "PLACEHOLDER${fasta_file}" \\
+    -m ${params.match} \\
+    -r PLACEHOLDER \\
+    $options.args \\
+    -pef ${params.peptidefdr} \\
+    -prf ${params.proteinfdr} \\
+    -t PLACEHOLDERtemp \\
+    -o2 exp_design.tsv \\
+    -n ${task.cpus} 
+     
     echo $VERSION > ${software}.version.txt
-
     """
-    //Rscript --version |& sed -e "s/ R scripting front-end version //gI" -e "s/([^)]*)//gI" > ${software}.version.txt
 }

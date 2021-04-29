@@ -12,8 +12,7 @@
 
 ## Introduction
 
-<!-- TODO nf-core: Write a 1-2 sentence summary of what data the pipeline is for and what it does -->
-**nf-core/maxquant** is a bioinformatics best-practise analysis pipeline for
+**nf-core/maxquant** MaxQuant is a quantitative proteomics software package designed for analyzing large mass-spectrometric data sets. This is developed to easier combine an easy generation of input files together with a normalyzer for the output of Maxquant. 
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker containers making installation trivial and results highly reproducible.
 
@@ -26,17 +25,17 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
 3. Download the pipeline and test it on a minimal dataset with a single command:
 
     ```bash
-    nextflow run nf-core/maxquant -profile test,<docker/singularity/podman/shifter/charliecloud/conda/institute>
+    nextflow run main.nf -profile test,<docker/singularity/podman/shifter/charliecloud/conda/institute>
     ```
 
     > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute. If so, you can simply use `-profile <institute>` in your command. This will enable either `docker` or `singularity` and set the appropriate execution settings for your local compute environment.
 
 4. Start running your own analysis!
 
-    <!-- TODO nf-core: Update the example "typical command" below used to run the pipeline -->
 
     ```bash
-    nextflow run nf-core/maxquant -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --input '*_R{1,2}.fastq.gz' --genome GRCh37
+    nextflow run main.nf -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --fasta '*.raw' --sdrf '*.tsv' --experiment_design '*.txt'
+
     ```
 
 See [usage docs](https://nf-co.re/maxquant/usage) for all of the available options when running the pipeline.
@@ -45,10 +44,11 @@ See [usage docs](https://nf-co.re/maxquant/usage) for all of the available optio
 
 By default, the pipeline currently performs the following:
 
-<!-- TODO nf-core: Fill in short bullet-pointed list of default steps of pipeline -->
 
-* Sequencing quality control (`FastQC`)
-* Overall pipeline run summaries (`MultiQC`)
+* Generating maxquant input file (`SDRF`)
+* Running the overall analysis (`Maxquant`)
+* Normalizing the results (`Normalyzered`)
+
 
 ## Documentation
 

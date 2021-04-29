@@ -1,0 +1,39 @@
+name: getsoftwareversions
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - sort
+tools:
+  - getsoftwareversions:
+      ## TODO nf-core: Add a description and other details for the software below
+      description: 
+      homepage: 
+      documentation: 
+      tool_dev_url: 
+      doi: ""
+      licence: 
+
+
+input:
+  - versions:
+      type: path
+      description: |
+        Informtion for different version numbers
+        of the software packages
+
+
+output:
+  - csv:
+      type: file
+      description: |
+        File containing information of 
+        software versions
+      pattern: "*.csv"
+  - yaml:
+      type: file
+      description: File containing software version
+      pattern: "*.yaml"
+
+
+authors:
+  - "@nicni16"

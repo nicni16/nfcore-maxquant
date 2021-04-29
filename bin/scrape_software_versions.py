@@ -5,16 +5,18 @@ import re
 
 # TODO nf-core: Add additional regexes for new tools in process get_software_versions
 regexes = {
-    "nf-core/maxquant": ["v_pipeline.txt", r"(\S+)"],
-    "Nextflow": ["v_nextflow.txt", r"(\S+)"],
-    "FastQC": ["v_fastqc.txt", r"FastQC v(\S+)"],
-    "MultiQC": ["v_multiqc.txt", r"multiqc, version (\S+)"],
+    "nf-core/maxquant": ["pipeline.version.txt", r"(\S+)"],
+    "Nextflow": ["nextflow.version.txt", r"(\S+)"],
+    "SDRF": ["sdrfpipelines.version.txt", r"(\S+)"],
+    "Maxquant": ["maxquant.version.txt", r"(\S+)"],
+    "Normalyzered": ["normalyzered.version.txt", r"(\S+)"]
 }
 results = OrderedDict()
 results["nf-core/maxquant"] = '<span style="color:#999999;">N/A</span>'
 results["Nextflow"] = '<span style="color:#999999;">N/A</span>'
-results["FastQC"] = '<span style="color:#999999;">N/A</span>'
-results["MultiQC"] = '<span style="color:#999999;">N/A</span>'
+results["SDRF"] = '<span style="color:#999999;">N/A</span>'
+results["Maxquant"] = '<span style="color:#999999;">N/A</span>'
+results["Normalyzered"] = '<span style="color:#999999;">N/A</span>'
 
 # Search each file using its regex
 for k, v in regexes.items():
