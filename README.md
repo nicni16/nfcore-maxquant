@@ -29,7 +29,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
     ```
 
     > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute. If so, you can simply use `-profile <institute>` in your command. This will enable either `docker` or `singularity` and set the appropriate execution settings for your local compute environment.
-
+    
 4. Start running your own analysis!
 
 
@@ -37,18 +37,15 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
     nextflow run main.nf -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --fasta '*.raw' --sdrf '*.tsv' --experiment_design '*.txt'
 
     ```
-
 See [usage docs](https://nf-co.re/maxquant/usage) for all of the available options when running the pipeline.
 
 ## Pipeline Summary
 
 By default, the pipeline currently performs the following:
 
-
 * Generating maxquant input file (`SDRF`)
 * Running the overall analysis (`Maxquant`)
 * Normalizing the results (`Normalyzered`)
-
 
 ## Documentation
 
