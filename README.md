@@ -12,7 +12,7 @@
 
 ## Introduction
 
-**nf-core/maxquant** MaxQuant is a quantitative proteomics software package designed for analyzing large mass-spectrometric data sets. This is developed to easier combine an easy generation of input files together with a normalyzer for the output of Maxquant. 
+**nf-core/maxquant** MaxQuant is a quantitative proteomics software package designed for analyzing large mass-spectrometric data sets. This is developed to easier combine an easy generation of input files together with a normalyzer for the output of Maxquant.
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker containers making installation trivial and results highly reproducible.
 
@@ -29,14 +29,14 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
     ```
 
     > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute. If so, you can simply use `-profile <institute>` in your command. This will enable either `docker` or `singularity` and set the appropriate execution settings for your local compute environment.
-    
-4. Start running your own analysis!
 
+4. Start running your own analysis!
 
     ```bash
     nextflow run main.nf -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --fasta '*.raw' --sdrf '*.tsv' --experiment_design '*.txt'
 
     ```
+
 See [usage docs](https://nf-co.re/maxquant/usage) for all of the available options when running the pipeline.
 
 ## Pipeline Summary
