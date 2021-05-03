@@ -12,3 +12,5 @@ ENV PATH /opt/conda/envs/nf-core-maxquant-1.0dev/bin:$PATH
 
 # Dump the details of the installed packages to a file for posterity
 RUN conda env export --name nf-core-maxquant-1.0dev > nf-core-maxquant-1.0dev.yml
+
+WORKDIR /
