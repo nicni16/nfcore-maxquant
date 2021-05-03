@@ -14,4 +14,4 @@ dependencies:
   - mono=5.14.0.177
   - bioconda::maxquant=1.6.10.43
   - bioconda::sdrf-pipelines=0.0.12
-  - bioconda::bioconductor-normalyzerde=1.8.0
+  - bioconda::bioconductor-normalyzerde=1.8
