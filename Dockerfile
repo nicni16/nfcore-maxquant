@@ -7,6 +7,7 @@ COPY environment.yml /
 RUN conda env create --quiet -f /environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
+RUN echo "source activate nf-core-maxquant" > ~/.bashrc
 ENV PATH /opt/conda/envs/nf-core-maxquant-1.0dev/bin:$PATH
 
 # Dump the details of the installed packages to a file for posterity
