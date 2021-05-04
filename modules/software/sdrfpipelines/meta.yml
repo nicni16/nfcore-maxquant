@@ -36,5 +36,9 @@ output:
       type: file
       description: Exp design
       pattern: "*.{tsv}"
+  - warning:
+      type: file
+      description: Warning from the file parser
+      pattern: "*.{txt}"
 authors:
   - "@nicni16"

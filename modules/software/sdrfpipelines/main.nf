@@ -53,6 +53,7 @@ process SDRFPIPELINES {
         path "mqpar.xml"              , emit: xml
         path "exp_design.tsv"         , emit: tsv
         path "*.version.txt"          , emit: version
+        path "Warning_message.txt"    , emit: warning
 
     script:
     def software = getSoftwareName(task.process)
@@ -75,5 +76,6 @@ process SDRFPIPELINES {
     -n ${task.cpus} 
      
     echo $VERSION > ${software}.version.txt
+    cat "\$PWD/.command.out" > Warning_message.txt
     """
 }

@@ -9,3 +9,4 @@ testing*
 *.pyc
 main_old.nf
 raw/sdrf_test*
+main_back.nf

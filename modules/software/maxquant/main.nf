@@ -50,7 +50,6 @@ process MAXQUANT {
     sed -i "s|PLACEHOLDER|\$PWD/|g" "${mqparameters}"
     mkdir temp
     maxquant ${mqparameters}
-    echo $VERSION > ${software}.version.txt
     cp -R "\$PWD/combined/txt" "${params.outdir}"
     echo $VERSION > ${software}.version.txt
     """
