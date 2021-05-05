@@ -18,7 +18,7 @@ include { initOptions; saveFiles; getSoftwareName } from './functions'
 // TODO nf-core: Optional inputs are not currently supported by Nextflow. However, "fake files" MAY be used to work around this issue.
 
 params.options = [:]
-options        = initOptions(params.options)
+def options        = initOptions(params.options)
 def VERSION ='0.0.12'
 
 process SDRFPIPELINES {

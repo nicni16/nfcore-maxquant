@@ -10,3 +10,4 @@ testing*
 main_old.nf
 raw/sdrf_test*
 main_back.nf
+nextflow_back.config

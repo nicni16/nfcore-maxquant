@@ -1,0 +1,2 @@
+nextflow_config:
+  - nextflow_back.config
