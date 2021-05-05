@@ -11,7 +11,7 @@ Remember that PRs should be made against the dev branch, unless you're preparing
 Learn more about contributing: [CONTRIBUTING.md](https://github.com/nf-core/maxquant/tree/master/.github/CONTRIBUTING.md)
 -->
 
-## PR checklist
+# PR checklist
 
 - [ ] This comment contains a description of changes (with reason).
 - [ ] If you've fixed a bug or added code that should be tested, add tests!
