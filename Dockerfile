@@ -5,7 +5,7 @@ LABEL authors="Niclas Kildegaard Nielsen and Veit Schwämmle" \
 # Install the conda environment
 COPY environment.yml /
 # Create the environment:
-RUN conda env create -f /environment.yml && conda clean -a
+RUN conda env create --quiet -f /environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
 ENV PATH /opt/conda/envs/nf-core-maxquant-1.0dev/bin:$PATH
