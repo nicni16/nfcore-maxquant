@@ -4,16 +4,16 @@
   |\\ | |__  __ /  ` /  \\ |__) |__         }  {
   | \\| |       \\__, \\__/ |  \\ |___     \\`-._,-`-,
                                         `._,._,'
-  nf-core/maxquant v${version}
+  nf-core/nicni16-nfcore-maxquant v${version}
 ----------------------------------------------------
 
 Run Name: $runName
 
 <% if (success){
-    out << "## nf-core/maxquant execution completed successfully! ##"
+    out << "## nf-core/nicni16-nfcore-maxquant execution completed successfully! ##"
 } else {
     out << """####################################################
-## nf-core/maxquant execution completed unsuccessfully! ##
+## nf-core/nicni16-nfcore-maxquant execution completed unsuccessfully! ##
 ####################################################
 The exit status of the task that caused the workflow execution to fail was: $exitStatus.
 The full error message was:
@@ -36,5 +36,5 @@ Pipeline Configuration:
 <% out << summary.collect{ k,v -> " - $k: $v" }.join("\n") %>
 
 --
-nf-core/maxquant
-https://github.com/nf-core/maxquant
+nf-core/nicni16-nfcore-maxquant
+https://github.com/nf-core/nicni16-nfcore-maxquant
