@@ -1,12 +1,10 @@
 name: getsoftwareversions
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: The software scrapes and combines the information to the software used in the pipeline.
 keywords:
   - sort
 tools:
   - getsoftwareversions:
-      ## TODO nf-core: Add a description and other details for the software below
-      description: 
+      description: The software scrapes and combines the information to the software used in the pipeline.
       homepage: 
       documentation: 
       tool_dev_url: 

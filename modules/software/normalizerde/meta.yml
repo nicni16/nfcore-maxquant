@@ -1,15 +1,17 @@
 name: normalizerde
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+
+description: NormalyzerDE is a software designed to ease the process of selecting an optimal normalization approach for your dataset and to perform subsequent differential expression analysis.
 keywords:
-  - sort
+  - Peptide identification
+  - Testing and assessment
+  - Mathematical methods
 tools:
   - normalizerde:
       description: Evaluation of normalization methods and calculation of differential expression analysis statistics
-      homepage: None
-      documentation: None
-      tool_dev_url: None
-      doi: ""
+      homepage: http://quantitativeproteomics.org/normalyzerde
+      documentation: http://quantitativeproteomics.org/normalyzerde
+      tool_dev_url: https://github.com/ComputationalProteomics/NormalyzerDE
+      doi: "https://doi.org/10.1021/acs.jproteome.8b00523"
       licence: ['Artistic-2.0']
 params: 
   - outdir:
@@ -33,7 +35,6 @@ params:
           Instead of directly downloading Singularity images for use with Singularity,
           force the workflow to pull and convert Docker containers instead.
 input:
-  ## TODO nf-core: Delete / customise this example input
   - sdrf_file:
       type: path
       description: SDRF file for information regarding exp setup
@@ -51,13 +52,11 @@ input:
       description: File with information on exp setup.
       pattern: "*.{tsv}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
   - version:
       type: file
       description: File containing software version
       pattern: "*.{version.txt}"
-  ## TODO nf-core: Delete / customise this example output
   - norm_stat:
       type: file
       description: Results

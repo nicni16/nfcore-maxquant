@@ -1,6 +1,6 @@
 name: sdrfpipelines
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+
+description: The SDRF pipelines provide a set of tools to validate and convert SDRF files to different workflow configuration files such as MSstats,OpenMS and MaxQuant.
 keywords:
   - sort
 tools:

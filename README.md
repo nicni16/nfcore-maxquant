@@ -51,16 +51,30 @@ By default, the pipeline currently performs the following:
 
 The nf-core/maxquant pipeline comes with documentation about the pipeline: [usage](https://nf-co.re/maxquant/usage) and [output](https://nf-co.re/maxquant/output).
 
-<!-- TODO nf-core: Add a brief overview of what the pipeline does and how it works -->
+This workflow is based on Nextflow, running with SDRF implemented. Normalization and statistical comparisons using NormalyzerDE are conducted on the MaxQuant results.
+
+Download the raw files from PRIDE: <http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001819>
+
+Run the workflow, giving the following parameters:
+
+1) The rawfolder, and nextflow needs read and write access to the directory. The path needs to absolute and not relative.
+2) The SDRF.tsv file. Relative paths works fine.
+3) The fasta file, and this needs a absolute file path, not relative.
+4) The absolute path to the experimental design file
+5) (Optional) Which normalization method to use.
+6) (Optional) The group comparisons to perform in NormalyzerDE. Without this parameter, the comparison will be versus
+the first condition.
+
+Just make sure to update the paths in the configuration file, and then run as
 
 ## Credits
 
-nf-core/maxquant was originally written by NKN&VS.
+nf-core/maxquant was originally written by NKN & VS.
 
 We thank the following people for their extensive assistance in the development
 of this pipeline:
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+Fredrik Levander for contributing on the implementation of the NormalyzerDE function.
 
 ## Contributions and Support
 
@@ -69,9 +83,6 @@ If you would like to contribute to this pipeline, please see the [contributing g
 For further information or help, don't hesitate to get in touch on the [Slack `#maxquant` channel](https://nfcore.slack.com/channels/maxquant) (you can join with [this invite](https://nf-co.re/join/slack)).
 
 ## Citations
-
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi. -->
-<!-- If you use  nf-core/maxquant for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
 
 You can cite the `nf-core` publication as follows:
 
@@ -83,4 +94,12 @@ You can cite the `nf-core` publication as follows:
 
 In addition, references of tools and data used in this pipeline are as follows:
 
-<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
+Software used:
+SDRF-pipelines:
+Perez-Riverol, Yasset, and European Bioinformatics Community for Mass Spectrometry. "Toward a Sample Metadata Standard in Public Proteomics Repositories." Journal of Proteome Research 19.10 (2020): 3906-3909. [Manuscript](https://pubs.acs.org/doi/abs/10.1021/acs.jproteome.0c00376)
+
+Maxquant:
+Cox, J., Mann, M. MaxQuant enables high peptide identification rates, individualized p.p.b.-range mass accuracies and proteome-wide protein quantification. Nat Biotechnol 26, 1367–1372 (2008). <https://doi.org/10.1038/nbt.151>
+
+NormalyzerDE:
+Willforss, J., Chawade, A., Levander, F. NormalyzerDE: Online tool for improved normalization of omics expression data and high-sensitivity differential expression analysis. Journal of Proteome Research 2018, 10.1021/acs.jproteome.8b00523.
