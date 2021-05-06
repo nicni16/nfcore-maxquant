@@ -266,9 +266,6 @@
         "enable_conda": {
             "type": "string"
         },
-        "name": {
-            "type": "string"
-        },
         "raws": {
             "type": "string"
         },
