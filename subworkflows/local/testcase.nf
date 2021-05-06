@@ -21,7 +21,7 @@ def modules = params.modules.clone()
 
 params.collected_options = [:]
 
-include {GET_SOFTWARE_VERSIONS}         from '../../modules/software/getsoftwareversions/main'     addParams(options: params.collected_options)
+include {GET_SOFTWARE_VERSIONS}         from '../../modules/software/getsoftwareversions/main'     addParams(options: [publish_files : ['csv':'']])
 include {SDRFPIPELINES}                 from '../../modules/software/sdrfpipelines/main'           addParams(options: params.collected_options)
 include {MAXQUANT}                      from '../../modules/software/maxquant/main'                addParams(options: params.collected_options)
 

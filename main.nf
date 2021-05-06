@@ -46,18 +46,6 @@ log.info Schema.params_summary_log(workflow, params, json_schema)
 
 
 
-/*
- * SET UP CONFIGURATION VARIABLES
- */
-
-// Has the run name been specified by the user?
-// this has the bonus effect of catching both -name and --name
-custom_runName = params.name
-if (!(workflow.runName ==~ /[a-z]+_[a-z]+/)) {
-    custom_runName = workflow.runName
-}
-
-
 ////////////////////////////////////////////////////
 /* --          CONFIG FILES                    -- */
 ////////////////////////////////////////////////////
