@@ -1,11 +1,11 @@
 ---
 name: Feature request
-about: Suggest an idea for the nf-core/nicni16-nfcore-maxquant pipeline
+about: Suggest an idea for the nf-core/maxquant pipeline
 labels: enhancement
 ---
 
 <!--
-# nf-core/nicni16-nfcore-maxquant feature request
+# nf-core/maxquant feature request
 
 Hi there!
 
