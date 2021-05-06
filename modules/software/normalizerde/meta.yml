@@ -1,0 +1,71 @@
+name: normalizerde
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - sort
+tools:
+  - normalizerde:
+      description: Evaluation of normalization methods and calculation of differential expression analysis statistics
+      homepage: None
+      documentation: None
+      tool_dev_url: None
+      doi: ""
+      licence: ['Artistic-2.0']
+params: 
+  - outdir:
+      type: string
+      description: |
+          The pipeline's output directory. By default, the module will
+          output files into `$params.outdir/<SOFTWARE>`
+  - publish_dir_mode:
+      type: string
+      description: |
+          Value for the Nextflow `publishDir` mode parameter.
+          Available: symlink, rellink, link, copy, copyNoFollow, move.
+  - enable_conda:
+      type: boolean
+      description: |
+          Run the module with Conda using the software specified
+          via the `conda` directive
+  - singularity_pull_docker_container:
+      type: boolean
+      description: |
+          Instead of directly downloading Singularity images for use with Singularity,
+          force the workflow to pull and convert Docker containers instead.
+input:
+  ## TODO nf-core: Delete / customise this example input
+  - sdrf_file:
+      type: path
+      description: SDRF file for information regarding exp setup
+      pattern: "*.{tsv}"
+  - exp_file:
+      type: path
+      description: File containing information regarding exp
+      pattern: "*.{tsv}"
+  - protein_file:
+      type: path
+      description: proteins from maxquant
+      pattern: "*.{txt}"
+  - exp_file2:
+      type: file
+      description: File with information on exp setup.
+      pattern: "*.{tsv}"
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  - version:
+      type: file
+      description: File containing software version
+      pattern: "*.{version.txt}"
+  ## TODO nf-core: Delete / customise this example output
+  - norm_stat:
+      type: file
+      description: Results
+      pattern: "*.{tsv}"
+  - norm_meth:
+      type: file
+      description: Information on norm meth.
+      pattern: "*.{txt}"
+
+authors:
+  - "@nicni16"

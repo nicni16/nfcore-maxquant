@@ -1,0 +1,9 @@
+nextflow_config:
+  - nextflow_back.config
+files_unchanged:
+  - .github/PULL_REQUEST_TEMPLATE.md
+  - .github/workflows/push_dockerhub_release.yml
+  - .github/workflows/push_dockerhub_dev.yml
+  - .github/workflows/branch.yml
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/ISSUE_TEMPLATE/bug_report.md

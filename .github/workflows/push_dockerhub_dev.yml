@@ -20,9 +20,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build new docker image
-        run: docker build --no-cache . -t nfcore/maxquant:dev
+        run: docker build --no-cache . -t lnkn/nfcore-maxquant:dev
 
       - name: Push Docker image to DockerHub (dev)
         run: |
           echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-          docker push nfcore/maxquant:dev
+          docker push lnkn/nfcore-maxquant:dev

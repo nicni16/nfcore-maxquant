@@ -6,10 +6,12 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - conda-forge::python=3.7.3
-  - conda-forge::markdown=3.1.1
-  - conda-forge::pymdown-extensions=6.0
-  - conda-forge::pygments=2.5.2
-  # TODO nf-core: Add required software dependencies here
-  - bioconda::fastqc=0.11.8
-  - bioconda::multiqc=1.7
+  - conda-forge::python=3.9.2
+  - conda-forge::markdown=3.3.4
+  - conda-forge::pymdown-extensions=8.1.1
+  - conda-forge::pygments=2.8.1
+  - r-hexbin=1.28.2
+  - mono=5.14.0.177
+  - bioconda::maxquant=1.6.10.43
+  - bioconda::sdrf-pipelines=0.0.12
+  - bioconda::bioconductor-normalyzerde=1.8.0

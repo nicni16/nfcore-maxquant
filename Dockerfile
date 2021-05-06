@@ -1,9 +1,10 @@
-FROM nfcore/base:1.12.1
-LABEL authors="NKN&VS" \
+FROM nfcore/base:1.13.3
+LABEL authors="Niclas Kildegaard Nielsen and Veit Schwämmle" \
       description="Docker image containing all software requirements for the nf-core/maxquant pipeline"
 
 # Install the conda environment
 COPY environment.yml /
+# Create the environment:
 RUN conda env create --quiet -f /environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
