@@ -16,7 +16,7 @@ process SDRFPIPELINES {
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
         container "https://depot.galaxyproject.org/singularity/sdrf-pipelines:0.0.12--py_0"
     } else {
-        container "lnkn/nfcore-maxquant:dev"
+        container "lnkn/nfcore-maxquant:latest"
     }
 
     input:

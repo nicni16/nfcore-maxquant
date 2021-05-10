@@ -15,7 +15,7 @@ process NORMALIZERDE {
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
         container "https://depot.galaxyproject.org/singularity/bioconductor-normalyzerde:1.8.0--r40hdfd78af_1"
     } else {
-        container "wombatp/maxquant-pipeline:dev"
+        container "wombatp/maxquant-pipeline:v0.13"
     }
 
     input:

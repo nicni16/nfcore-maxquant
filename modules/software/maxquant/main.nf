@@ -15,7 +15,7 @@ process MAXQUANT {
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
         container "https://depot.galaxyproject.org/singularity/maxquant:1.6.10.43--0"
     } else {
-        container "lnkn/nfcore-maxquant:dev"
+        container "lnkn/nfcore-maxquant:latest"
     }
 
     input:
