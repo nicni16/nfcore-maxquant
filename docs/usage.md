@@ -1,19 +1,15 @@
 # nf-core/maxquant: Usage
 
-## :warning: Please read this documentation on the nf-core website: [https://nf-co.re/maxquant/usage](https://nf-co.re/maxquant/usage)
-
 > _Documentation of pipeline parameters is generated automatically from the pipeline schema and can no longer be found in markdown files._
 
 ## Introduction
-
-<!-- TODO nf-core: Add documentation about anything specific to running your pipeline. For general topics, please point to (and add to) the main nf-core website. -->
 
 ## Running the pipeline
 
 The typical command for running the pipeline is as follows:
 
 ```bash
-nextflow run nf-core/maxquant --input '*_R{1,2}.fastq.gz' -profile docker
+nextflow run main.nf --raws "path/to/raws" --sdrf "path/to/*.tsv" --fasta "path/to/*.fasta" --experiment_design "SPECIFYFOLDER/exp_design.txt" -profile docker
 ```
 
 This will launch the pipeline with the `docker` configuration profile. See below for more information about profiles.
@@ -39,7 +35,7 @@ nextflow pull nf-core/maxquant
 
 It's a good idea to specify a pipeline version when running the pipeline on your data. This ensures that a specific version of the pipeline code and software are used when you run your pipeline. If you keep using the same tag, you'll be running the same version of the pipeline, even if there have been changes to the code since.
 
-First, go to the [nf-core/maxquant releases page](https://github.com/nf-core/maxquant/releases) and find the latest version number - numeric only (eg. `1.3.1`). Then specify this when running the pipeline with `-r` (one hyphen) - eg. `-r 1.3.1`.
+First, go to the [nf-core/maxquant releases page](https://github.com/nicni16/nfcore-maxquant) and find the latest version number - numeric only (eg. `1.3.1`). Then specify this when running the pipeline with `-r` (one hyphen) - eg. `-r 1.3.1`.
 
 This version number will be logged in reports when you run the pipeline, so that you'll know what you used when you look back in the future.
 
@@ -64,19 +60,19 @@ If `-profile` is not specified, the pipeline will run locally and expect all sof
 
 * `docker`
   * A generic configuration profile to be used with [Docker](https://docker.com/)
-  * Pulls software from Docker Hub: [`nfcore/maxquant`](https://hub.docker.com/r/nfcore/maxquant/)
+  * Pulls software from Docker Hub: [`lnkn/nfcore-maxquant`](https://hub.docker.com/r/lnkn/nfcore-maxquant/)
 * `singularity`
   * A generic configuration profile to be used with [Singularity](https://sylabs.io/docs/)
-  * Pulls software from Docker Hub: [`nfcore/maxquant`](https://hub.docker.com/r/nfcore/maxquant/)
+  * Pulls software from Docker Hub: [`lnkn/nfcore-maxquant`](https://hub.docker.com/r/lnkn/nfcore-maxquant/)
 * `podman`
   * A generic configuration profile to be used with [Podman](https://podman.io/)
-  * Pulls software from Docker Hub: [`nfcore/maxquant`](https://hub.docker.com/r/nfcore/maxquant/)
+  * Pulls software from Docker Hub: [`lnkn/nfcore-maxquant`](https://hub.docker.com/r/lnkn/nfcore-maxquant/)
 * `shifter`
   * A generic configuration profile to be used with [Shifter](https://nersc.gitlab.io/development/shifter/how-to-use/)
-  * Pulls software from Docker Hub: [`nfcore/maxquant`](https://hub.docker.com/r/nfcore/maxquant/)
+  * Pulls software from Docker Hub: [`lnkn/nfcore-maxquant`](https://hub.docker.com/r/lnkn/nfcore-maxquant/)
 * `charliecloud`
   * A generic configuration profile to be used with [Charliecloud](https://hpc.github.io/charliecloud/)
-  * Pulls software from Docker Hub: [`nfcore/maxquant`](https://hub.docker.com/r/nfcore/maxquant/)
+  * Pulls software from Docker Hub: [`lnkn/nfcore-maxquant`](https://hub.docker.com/r/lnkn/nfcore-maxquant/)
 * `conda`
   * Please only use Conda as a last resort i.e. when it's not possible to run the pipeline with Docker, Singularity, Podman, Shifter or Charliecloud.
   * A generic configuration profile to be used with [Conda](https://conda.io/docs/)

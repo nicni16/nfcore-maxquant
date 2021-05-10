@@ -17,7 +17,7 @@ process GET_SOFTWARE_VERSIONS {
     if (workflow.containerEngine == 'singularity' && !params.singularity_pull_docker_container) {
         container "https://depot.galaxyproject.org/singularity/python:3.8.3"
     } else {
-        container "lnkn/nfcore-maxquant:dev"
+        container "lnkn/nfcore-maxquant:latest"
     }
 
     cache false
