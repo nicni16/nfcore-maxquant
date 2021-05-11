@@ -19,9 +19,9 @@ workflow COMBINED {
     input_exp_design = channel.fromPath(params.experiment_design)
     SDRFPIPELINES (input_sdrf, input_fasta)
     ch_software_versions = ch_software_versions.mix(SDRFPIPELINES.out.version.first().ifEmpty(null))
-    MAXQUANT (SDRFPIPELINES.out[0], input_raw.collect(), input_fasta)
+    MAXQUANT (SDRFPIPELINES.out.xml, input_raw.collect(), input_fasta)
     ch_software_versions = ch_software_versions.mix(MAXQUANT.out.version.first().ifEmpty(null))
-    NORMALIZERDE (input_sdrf, SDRFPIPELINES.out[1], MAXQUANT.out[0], input_exp_design)
+    NORMALIZERDE (input_sdrf, SDRFPIPELINES.out.tsv, MAXQUANT.out.txt, input_exp_design)
     ch_software_versions = ch_software_versions.mix(NORMALIZERDE.out.version.first().ifEmpty(null))
     GET_SOFTWARE_VERSIONS (
         ch_software_versions.map { it }.collect()

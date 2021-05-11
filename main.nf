@@ -21,6 +21,10 @@ if (params.help) {
 /* --          PARAMETER CHECKS                -- */
 ////////////////////////////////////////////////////
 
+if (params.validate_params) {
+    NfcoreSchema.validateParameters(params, json_schema, log)
+}
+
 // Check that conda channels are set-up correctly
 if (params.enable_conda) {
     Checks.check_conda_channels(log)

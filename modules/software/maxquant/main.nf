@@ -1,6 +1,5 @@
 // Import generic module functions
 include { initOptions; saveFiles; getSoftwareName } from './functions'
-
 params.options = [:]
 options        = initOptions(params.options)
 def VERSION = '1.6.10.43'
@@ -17,19 +16,13 @@ process MAXQUANT {
     } else {
         container "lnkn/nfcore-maxquant:latest"
     }
-
     input:
         path mqparameters
         file rawfile 
 	    file fastafile 
-         
-
     output:
-
         path "combined/txt/proteinGroups.txt"   , emit: txt
         path "*.version.txt"                    , emit: version
-
-
     script:
     def software = getSoftwareName(task.process)
 
