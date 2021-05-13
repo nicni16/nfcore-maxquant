@@ -8,14 +8,14 @@ regexes = {
     "Nextflow": ["nextflow.version.txt", r"(\S+)"],
     "SDRF": ["sdrfpipelines.version.txt", r"(\S+)"],
     "Maxquant": ["maxquant.version.txt", r"(\S+)"],
-    "Normalyzered": ["normalyzered.version.txt", r"(\S+)"]
+    "Normalyzerde": ["normalizerde.version.txt", r"(\S+)"]
 }
 results = OrderedDict()
 results["nf-core/maxquant"] = '<span style="color:#999999;">N/A</span>'
 results["Nextflow"] = '<span style="color:#999999;">N/A</span>'
 results["SDRF"] = '<span style="color:#999999;">N/A</span>'
 results["Maxquant"] = '<span style="color:#999999;">N/A</span>'
-results["Normalyzered"] = '<span style="color:#999999;">N/A</span>'
+results["Normalyzerde"] = '<span style="color:#999999;">N/A</span>'
 
 # Search each file using its regex
 for k, v in regexes.items():
